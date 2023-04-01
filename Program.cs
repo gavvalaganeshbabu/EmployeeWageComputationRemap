@@ -13,9 +13,14 @@ namespace EmployeeWageProblem
             bool b = employee.IsEmployeePresent();
             if (b == true) {
                 Console.WriteLine(name + " Is Present Today ");
+                int WagePerDay=employee.WagesPerDay();
+                Console.WriteLine(WagePerDay+" Is the Total Wages Per Day ");
             }
-            else { Console.WriteLine(name + " Is Absent Today ");
+            else {
+                Console.WriteLine(name + " Is Absent Today ");
+                Console.WriteLine("No Income Today ");
             }
+            Console.ReadLine();
         }
 
         
