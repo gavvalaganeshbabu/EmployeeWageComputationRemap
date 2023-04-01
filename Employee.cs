@@ -8,16 +8,23 @@ namespace EmployeeWageProblem
     {
         const int WagePerHour = 20;
         const int TotalHourPerDay = 8;
-        public  bool IsEmployeePresent() {
+        const int PartTimeHour = 4;
+        public  string IsEmployeePresent() {
             Random rnd = new Random();
-            int attendence = rnd.Next(0, 2);
-            if(attendence==0)
-            return false;
-            else return true;
+            int attendence = rnd.Next(0, 3);
+            if (attendence == 0)
+                return "Absent ";
+            else if (attendence == 1) return "Part Time Present";
+            else
+                return "Full Day Present";
         }
         public int WagesPerDay() {
             int WageperDay = WagePerHour * TotalHourPerDay;
             return WageperDay;
+        }
+        public int PartTimeWageCalculator() {
+            int WagePerHalfDay= PartTimeHour * WagePerHour;
+            return WagePerHalfDay;
         }
     }
 }

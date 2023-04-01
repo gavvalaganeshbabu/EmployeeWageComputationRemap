@@ -10,15 +10,19 @@ namespace EmployeeWageProblem
             Console.WriteLine("Enter Employee Name :");
             string name=Console.ReadLine();
             Employee employee= new Employee();
-            bool b = employee.IsEmployeePresent();
-            if (b == true) {
+            string b = employee.IsEmployeePresent();
+            if (b == "Full Day Present") {
                 Console.WriteLine(name + " Is Present Today ");
                 int WagePerDay=employee.WagesPerDay();
                 Console.WriteLine(WagePerDay+" Is the Total Wages Per Day ");
             }
-            else {
-                Console.WriteLine(name + " Is Absent Today ");
-                Console.WriteLine("No Income Today ");
+            else if(b== "Part Time Present")
+            {
+                Console.WriteLine(name + " Is Present Half Today ");
+                int WagePerHalfDay = employee.PartTimeWageCalculator();
+                Console.WriteLine(WagePerHalfDay + " Is Total Wage Today ");
+            }
+            else { Console.WriteLine(name + "Is Absent Today And No Income Today ");
             }
             Console.ReadLine();
         }
