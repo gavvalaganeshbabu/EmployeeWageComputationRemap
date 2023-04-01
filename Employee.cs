@@ -9,6 +9,9 @@ namespace EmployeeWageProblem
         const int WagePerHour = 20;
         const int TotalHourPerDay = 8;
         const int PartTimeHour = 4;
+        const int TotalWorkingDaysPerMonth = 20;
+        public int TotalWageOfMonth;
+        public int WorkingDays = 20;
         public  void IsEmployeePresent() {
             Console.WriteLine("Enter Employee Name :");
             string name = Console.ReadLine();
@@ -40,6 +43,30 @@ namespace EmployeeWageProblem
         public int PartTimeWageCalculator() {
             int WagePerHalfDay= PartTimeHour * WagePerHour;
             return WagePerHalfDay;
+        }
+        public void TotalWagePerMonth() {
+            Random random= new Random();
+            for (int i = 0; i <= TotalWorkingDaysPerMonth; i++)
+            {
+                int n = random.Next(0, 3);
+                switch (n)
+                {
+                    case 0://Full Day present
+                        TotalWageOfMonth += (TotalHourPerDay * WagePerHour);
+                        break;
+                    case 1://Half Day Present
+                        TotalWageOfMonth += (PartTimeHour * WagePerHour);
+                        break;
+                    case 2://Full Day Absent
+                        WorkingDays--;
+                        TotalWageOfMonth += 0;
+                        break;
+                    default:
+                        break;
+                }
+            }
+            Console.WriteLine("No of Working Days in Month = " + WorkingDays);
+            Console.WriteLine("Total Wages in a Month = " + TotalWageOfMonth);
         }
     }
 }

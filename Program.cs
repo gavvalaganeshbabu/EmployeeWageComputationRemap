@@ -10,6 +10,7 @@ namespace EmployeeWageProblem
             
             Employee employee= new Employee();
             employee.IsEmployeePresent();
+            employee.TotalWagePerMonth();
             Console.ReadLine();
         }
 
