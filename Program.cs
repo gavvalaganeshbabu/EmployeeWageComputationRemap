@@ -11,6 +11,7 @@ namespace EmployeeWageProblem
             Employee employee= new Employee();
             employee.IsEmployeePresent();
             employee.TotalWagePerMonth();
+            employee.TotalWagePerMonthMaximum();
             Console.ReadLine();
         }
 
